@@ -1,49 +1,35 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
     <head>
-        <title>Prueba de PHP</title>
-        <style>
-            body {
-                background-color: black;
-                font-family: monospace;
-                font-size: 32px;
-            }
-            .title {
-                color: white;
-            }
-            .container{
-                position: absolute;
-                width: 700px;
-                height: 300px;
-                top: 50%;
-                left: 50%;
-                margin-top: -150px;
-                margin-left: -350px;
-            }
-            p{
-                color: #55ff55;
-                text-align: center;
-                font-weight: bolder;
-            }
-            h1{
-                margin:0;
-                text-align: center;
-            }
-        </style>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Simple PHP App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <style>body {margin-top: 40px; background-color: #333;}</style>
+        <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     </head>
+
     <body>
         <div class="container">
-            <h1 class="title">AWS Demo - DevOps hola</h1>
-            <p><?php
-                //Metadata
-                $url = "http://169.254.169.254/latest/meta-data/public-hostname";
+            <div class="hero-unit">
+                <h1>Simple PHP App</h1>
+                <h2>Congratulations</h2>
+                <p>Your PHP application is now running on a container in Amazon ECS.</p>
+                <p>The container is running PHP version <?php echo phpversion(); ?>.</p>
+                <?php
+                        $myfile = fopen("/var/www/my-vol/date", "r") or die("");
+                        echo fread($myfile,filesize("/var/www/my-vol/date"));
+                        fclose($myfile);
+                ?>
 
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                $response = curl_exec($ch);
-                curl_close($ch);
-                echo sprintf('%s',$response);
-            ?></p>
+            </div>
         </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
     </body>
+
 </html>
