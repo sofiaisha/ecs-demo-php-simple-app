@@ -1,6 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
     <head>
-        <title>Prueba de PHP</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Prueba PHP</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             body {
                 background-color: black;
@@ -29,10 +34,12 @@
                 text-align: center;
             }
         </style>
+        <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     </head>
+
     <body>
         <div class="container">
-            <h1 class="title">AWS Demo - DevOps hola</h1>
+            <h1 class="title">AWS Demo - DevOps</h1>
             <p><?php
                 //Metadata
                 $url = "http://169.254.169.254/latest/meta-data/public-hostname";
@@ -46,4 +53,5 @@
             ?></p>
         </div>
     </body>
+
 </html>

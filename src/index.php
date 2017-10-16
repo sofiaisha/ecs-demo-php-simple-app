@@ -15,10 +15,10 @@
     <body>
         <div class="container">
             <div class="hero-unit">
-                <h1>Simple PHP App</h1>
-                <h2>Congratulations</h2>
-                <p>Your PHP application is now running on a container in Amazon ECS.</p>
-                <p>The container is running PHP version <?php echo phpversion(); ?>.</p>
+                <h1>Aplicacion de prueba</h1>
+                <h2>Felicidades</h2>
+                <p>Tu aplicacion PHP ahora esta corriendo en Amazon ECS.</p>
+                <p>El container esta corriendo la version de PHP <?php echo phpversion(); ?>.</p>
                 <?php
                         $myfile = fopen("/var/www/my-vol/date", "r") or die("");
                         echo fread($myfile,filesize("/var/www/my-vol/date"));
