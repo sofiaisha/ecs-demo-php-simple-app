@@ -39,7 +39,7 @@
 
     <body>
         <div class="container">
-            <h1 class="title">AWS Demo - DevOps</h1>
+            <h1 class="title">AWS Demo - DevOps Flecha</h1>
             <p><?php
                 //Metadata
                 $url = "http://169.254.169.254/latest/meta-data/public-hostname";
