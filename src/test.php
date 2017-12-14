@@ -39,7 +39,7 @@
 
     <body>
         <div class="container">
-            <h1 class="title">AWS Demo Santander - DevOps</h1>
+            <h1 class="title">Duff Time!!</h1>
             <p><?php
                 //Metadata
                 $url = "http://169.254.169.254/latest/meta-data/public-hostname";
@@ -50,6 +50,12 @@
                 $response = curl_exec($ch);
                 curl_close($ch);
                 echo sprintf('%s',$response);
+
+$image = 'https://s3.amazonaws.com/sofy/2jD7ZHg.jpg';
+$imageData = base64_encode(file_get_contents($image));
+echo '<img src="data:image/jpeg;base64,'.$imageData.'">';
+
+
             ?></p>
         </div>
     </body>
